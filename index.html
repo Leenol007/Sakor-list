@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakor Books</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb; /* Blue from CitiRoad (text-blue-600) */
+      /* --bg will be handled by the body gradient directly */
+      --card-bg: #ffffff;
+      --shadow: 0 6px 18px rgba(37, 99, 235, 0.07); /* Shadow tinted with new primary */
+      --radius: 0.75rem;
+      --accent: #dbeafe; /* Light blue from CitiRoad (bg-blue-100) */
+      --text: #111827;   /* Dark gray from CitiRoad (text-gray-900) */
+      --muted: #6b7280;  /* Lighter gray from CitiRoad (text-gray-500) */
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      /* background: var(--bg); Replacing solid background with gradient */
+      background: linear-gradient(to bottom right, #f8fafc, #eff6ff); /* Gradient from CitiRoad body */
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+    /* Container styling will be handled by Bootstrap's .container class */
+    
+    h1 {
+      font-size: 2.5rem; /* Adjusted for Bootstrap context */
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif; /* New font for H1 */
+      margin-bottom: 2.5rem;
+      text-align: center;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+    /* .book-grid will be replaced by Bootstrap's row */
+
+    .book-card-custom {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem;
+      transition: box-shadow 0.25s ease-out, transform 0.25s ease-out;
+      border: 1px solid #edf2f7;
+      height: 100%; /* Important for Bootstrap columns to make cards of same height */
+    }
+    .book-card-custom:hover {
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12); /* Hover shadow with new primary */
+      transform: translateY(-4px) scale(1.01);
+    }
+    .book-cover {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 0.5rem; /* Slightly smaller radius for elements inside the card */
+      background: var(--accent);
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .book-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0 0 0.35rem 0;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+      min-height: 2.8em;
+    }
+    .book-author {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+    .book-price {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0;
+      margin-top: auto;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      /* Container padding will be handled by Bootstrap */
+      .book-card-custom { padding: 1rem; }
+      .book-cover { height: auto; aspect-ratio: 3 / 4; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5 mb-5">
+    <h1 class="mb-4">Sakor Books</h1>
+    <div class="row gy-4">
+      <!-- Card 1: New Order -->
+      <div class="col-3 col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_7280.jpeg" alt="Book Cover 1">
+          <div class="book-title">The 48 laws of Power</div>
+          <div class="book-author">by Robert Greene</div>
+          <div class="book-price">$7.50</div>
+        </div>
+      </div>
+      <!-- Card 2: New Order -->
+      <div class="col-3 col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_7274.jpeg" alt="Book Cover 2">
+          <div class="book-title">Good Vibe, Good Life</div>
+          <div class="book-author">by Vex King</div>
+          <div class="book-price">$7.50</div>
+        </div>
+      </div>
+      <!-- Card 3: New Order -->
+      <div class="col-3 col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_8811.JPG" alt="Book Cover 3">
+          <div class="book-title">Jim Rohn</div>
+          <div class="book-author">By Jim Rohn</div>
+          <div class="book-price">$3.50</div>
+        </div>
+      </div>
+      <!-- Remaining Cards from 'books' directory - hidden on xs, visible on sm+ -->
+      <div class="d-none d-sm-block col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_3826.jpeg" alt="Book Cover">
+          <div class="book-title">belive it.</div>
+          <div class="book-author">by Napoleon Hill</div>
+          <div class="book-price">$6.50</div>
+        </div>
+      </div>
+      <div class="d-none d-sm-block col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_7282.jpeg" alt="Book Cover">
+          <div class="book-title">How to Stop Worrying and Start Living</div>
+          <div class="book-author">by Dale Carnegie</div>
+          <div class="book-price">$7.00</div>
+        </div>
+      </div>
+      <div class="d-none d-sm-block col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_7281.jpeg" alt="Book Cover">
+          <div class="book-title">The Psychology of Money</div>
+          <div class="book-author">by Morgan Housel</div>
+          <div class="book-price">$7.00</div>
+        </div>
+      </div>
+      <div class="d-none d-sm-block col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_7279.jpeg" alt="Book Cover">
+          <div class="book-title">Winning with people</div>
+          <div class="book-author">by John C.Maxwell</div>
+          <div class="book-price">$7.00</div>
+        </div>
+      </div>
+      <div class="d-none d-sm-block col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_7278.jpeg" alt="Book Cover">
+          <div class="book-title">The Secret</div>
+          <div class="book-author"></div>
+          <div class="book-price">$3.00</div>
+        </div>
+      </div>
+      <div class="d-none d-sm-block col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_7277.jpeg" alt="Book Cover">
+          <div class="book-title">Option B</div>
+          <div class="book-author">by Sheryl Sandberg</div>
+          <div class="book-price">$6.00</div>
+        </div>
+      </div>
+      <div class="d-none d-sm-block col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_7276.jpeg" alt="Book Cover">
+          <div class="book-title">Rich Dad Poor Dad</div>
+          <div class="book-author">by Robert Kiyosaki</div>
+          <div class="book-price">$6.25</div>
+        </div>
+      </div>
+      <div class="d-none d-sm-block col-sm-6 col-md-4 col-lg-3">
+        <div class="book-card-custom">
+          <img class="book-cover" src="books/IMG_7275.jpeg" alt="Book Cover">
+          <div class="book-title">How to win friends and influence people</div>
+          <div class="book-author">by Dale Carnegie</div>
+          <div class="book-price">$7.00</div>
+        </div>
+      </div>
+      <!-- Add more book cards here if needed, following the d-none d-sm-block structure -->
+    </div>
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html> 
